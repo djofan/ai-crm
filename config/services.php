@@ -28,6 +28,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'openai' => [
+        'api_key' => env('OPENAI_API_KEY'),
+        'base_url' => env('OPENAI_BASE_URL', 'https://api.openai.com/v1'),
+        // Wajib diisi lewat .env (tidak ada default agar tidak memakai model usang).
+        'model' => env('OPENAI_MODEL'),
+        'timeout' => (int) env('OPENAI_TIMEOUT', 30),
+        'retries' => (int) env('OPENAI_RETRIES', 1),
+        'max_output_tokens' => (int) env('OPENAI_MAX_OUTPUT_TOKENS', 1500),
+    ],
+
     'slack' => [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
